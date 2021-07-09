@@ -1,0 +1,251 @@
+body{
+	font-family:Arial, sans;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	width:100%;
+	height:100%;
+	line-height:22px;
+	color:#777777;
+}
+
+a:link    {color:#009AFF;}
+a:visited {color:#009AFF;}
+a:hover   {color:#000000;}
+a:active  {color:#009AFF;}
+
+.link{}
+
+a.link:link    {color:#111111;}
+a.link:visited {color:#111111;}
+a.link:hover   {color:#009AFF;}
+a.link:active  {color:#111111;}  
+
+ /* Header */
+ #mainHeader{
+	position:relative;
+	overflow:hidden;
+	width:100%;
+	height:130px;
+	background-color:#FFFFFF;
+	background-repeat:repeat-x;
+ }
+ 
+ #logoImage{
+	position:absolute;
+	height:130px;
+}
+
+#byFWD{
+	position:absolute;
+}
+
+/* Menu holder */
+#menuHolder{
+	overflow:hidden;
+	position:relative;
+	width:100%;
+}
+
+/* Product holder */
+#myDiv{
+	margin:0px;
+	padding:0px;
+	margin:auto;
+}
+
+/* sliders holder */
+#mainSlidersHolder{
+	overflow:visible;
+	position:relative;
+	width:100%;
+	z-index:10;
+}
+
+#preview{
+	padding-top:15px;	
+	margin:auto;
+	margin-bottom:50px;
+	width:200px;
+	color:#009AFF;
+	text-align:center;
+	font-size:18px;
+	font-family:myFont, Arial;
+}
+
+#slidersHolder{
+	overflow:visible;
+	position:relative;
+	width:100%;
+}
+
+/* Thumbs holder */
+#mainThumbsHolder{
+	overflow:hidden;
+	position:relative;
+	background-color:#DDDDDD;
+	width:100%;
+	padding-bottom:20px;
+}
+
+#examples{
+	margin:auto;
+	margin-top:15px;
+	width:200px;
+	color:#009AFF;
+	text-align:center;
+	font-size:18px;
+	font-family:myFont, Arial;
+}
+
+#thumbsHolder{
+	position:relative;
+	height:200px;
+	margin:auto;
+	margin-top:0px;
+	background-color:"#00FF00"
+}
+
+.specialNotesHeaderText{
+	font-family:myFont, Arial;
+	font-size:22px;
+	color:#000000;
+	text-align:center;
+	margin:0px;
+	padding:0px;
+	margin-left:6px;
+	margin-right:6px;
+	padding-top:20px;
+	margin-bottom:20px;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.blue{
+	color:#009AFF;
+}
+
+.white{
+	font-weight:bold;
+	color:#CCCCCC;
+}
+
+.black{
+	font-weight:bold;
+	color:#000000;
+}
+
+.dark{
+	color:#111111;
+}
+
+.bolded{
+	color:#999999;
+	font-weight:bold;
+}
+
+/* Info */
+#mainInfoHolder{
+	position:relative;
+	overflow:hidden;
+	margin:0px;
+	padding:0px;
+}
+
+#whatIsMainText{
+	position:relative;
+	margin-top:-5px;
+}
+
+#mainFeatureTableHolder{
+	position:relative;
+	margin:auto;
+}
+
+table{
+	border-collapse:collapse;
+	text-align:left;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+tr{
+	 border-top:0px;
+	 text-align:left;
+	 margin:0px;
+	padding:0px;
+}
+
+td{
+	text-align:left;
+	vertical-align:top;
+	margin:0px;
+	padding:0px;
+}
+
+td p{
+	margin:0px;
+	padding:0px;
+	margin-bottom:4px;
+}
+
+#specialNotesMainHolder{
+	background-color:#DDDDDD;
+	color:#777777;
+	margin-top:30px;
+}
+
+#specialNotes{
+	position:relative;
+	margin:0px;
+	padding:0px;
+}
+
+.firstTd{
+	width:47%;	
+}
+
+.secondTd{
+	width:6%;
+}
+
+/* Classes */
+.plusImage{
+	position:relative;
+	margin-right:6px;
+	width:7px;
+	height:7px;
+	top:-1px;
+}
+
+#lastP{
+	padding-bottom:20px;
+}
+
+.headerText{
+	overflow:hidden;
+	margin:auto;
+	color:#777777;
+	text-align:center;
+	font-size:22px;
+	margin-top:20px;
+	padding-top:20px;
+	padding-bottom:40px;
+	font-family:myFont, Arial;
+}
+
+.specialNotesHeaderText{
+	font-family:myFont, Arial;
+	font-size:22px;
+	color:#009AFF;
+	text-align:center;
+	margin:0px;
+	padding:0px;
+	margin-left:6px;
+	margin-right:6px;
+	padding-top:20px;
+	margin-bottom:20px;
+}

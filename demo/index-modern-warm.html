@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Ultimate 3D Carousel</title>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+		
+		<!-- Import required css and js files -->
+		<link rel="stylesheet" type="text/css" href="load/skin_modern_warm.css"/>
+		<link rel="stylesheet" type="text/css" href="load/html_content.css"/>
+		<link rel="stylesheet" type="text/css" href="skin_modern_silver_java_and_css/page.css"/>
+		
+		<script type="text/javascript" src="skin_modern_warm_java_and_css/FWDPage.js"></script>
+		<script type="text/javascript" src="java/FWDPageMenu.js"></script>
+		<script type="text/javascript" src="java/FWDPageMenuButton.js"></script>
+		<script type="text/javascript" src="java/FWDPageThumbs.js"></script>
+		<script type="text/javascript" src="java/FWDPageThumb.js"></script>
+		<script type="text/javascript" src="java/FWDPageSimpleButton.js"></script>
+		<script type="text/javascript" src="java/FWDSlidersMenu.js"></script>
+		<script type="text/javascript" src="java/FWDSlidersMenuButton.js"></script>
+		<script type="text/javascript" src="java/FWDSlider.js"></script>
+		<script type="text/javascript" src="java/FWDOnOffButton.js"></script>
+		<script type="text/javascript" src="java/FWDFloatSlider.js"></script>
+		<script type="text/javascript" src="java/FWDPageComboBox.js"></script>
+		<script type="text/javascript" src="java/FWDResetButton.js"></script>
+		
+		<script type="text/javascript" src="java/FWDUltimate3DCarousel.js"></script>
+		
+		<!-- font include -->
+		<style> 
+			@font-face{
+				font-family:myFont;
+				src: url(font/Lato-Lig.ttf);
+			}
+		</style>
+		
+		<!-- Setup the carousel (all settings are explained in detail in the documentation files) -->
+		<script type="text/javascript">
+			var carousel;
+
+			FWDU3DCarUtils.onReady(function(){
+				if(window.top != window){
+					top.location.href = 'index.html';	
+				}else{
+					init();
+				}
+			});
+			
+			function setupCarousel(){
+				carousel = new FWDUltimate3DCarousel({
+					
+					//required settings
+					carouselHolderDivId:"myDiv",
+					carouselDataListDivId:"playList4SingleCat",
+					displayType:"fluidwidth",
+					autoScale:"yes",
+					carouselWidth:940,
+					carouselHeight:538,
+					skinPath:"load/skin_modern_warm",
+												
+					//main settings
+					backgroundColor:"#DDDDDD",
+					backgroundImagePath:"load/skin_modern_warm/background.jpg",
+					thumbnailsBackgroundImagePath:"",
+					scrollbarBackgroundImagePath:"load/skin_modern_warm/scrollbarBackground.jpg",
+					backgroundRepeat:"repeat-x",
+					carouselStartPosition:"center",
+					carouselTopology:"ring",
+					carouselXRadius:600,
+					carouselYRadius:0,
+					carouselXRotation:10,
+					carouselYOffset:0,
+					showCenterImage:"no",
+					centerImagePath:"load/logo.png",
+					centerImageYOffset:0,
+					showDisplay2DAlways:"no",
+					slideshowDelay:5000,
+					autoplay:"no",
+					showPrevButton:"yes",
+					showNextButton:"yes",
+					showSlideshowButton:"yes",
+					disableNextAndPrevButtonsOnMobile:"no",
+					controlsMaxWidth:940,
+					slideshowTimerColor:"#777777",
+					showContextMenu:"no",
+					addKeyboardSupport:"yes",
+												
+					//thumbnail settings
+					thumbnailWidth:380,
+					thumbnailHeight:330,
+					thumbnailBorderSize:0,
+					thumbnailMinimumAlpha:.3,
+					thumbnailBackgroundColor:"#999999",
+					thumbnailBorderColor1:"#fcfdfd",
+					thumbnailBorderColor2:"#e4e4e4",
+					transparentImages:"no",
+					maxNumberOfThumbnailsOnMobile:13,
+					showThumbnailsGradient:"yes",
+					showThumbnailsHtmlContent:"yes",
+					textBackgroundColor:"#333333",
+					textBackgroundOpacity:.7,
+					showText:"no",
+					showTextBackgroundImage:"yes",
+					showThumbnailBoxShadow:"yes",
+					thumbnailBoxShadowCss:"0px 2px 2px #666666",
+					showReflection:"yes",
+					reflectionHeight:60,
+					reflectionDistance:0,
+					reflectionOpacity:.2,
+												
+					//scrollbar settings
+					showScrollbar:"yes",
+					disableScrollbarOnMobile:"yes",
+					enableMouseWheelScroll:"yes",
+					scrollbarHandlerWidth:300,
+					scrollbarTextColorNormal:"#777777",
+					scrollbarTextColorSelected:"#000000",
+												
+					//combobox settings
+					showComboBox:"yes",
+					startAtCategory:1,
+					selectLabel:"SELECT CATEGORIES",
+					allCategoriesLabel:"All Categories",
+					showAllCategories:"no",
+					comboBoxPosition:"topright",
+					selectorBackgroundNormalColor1:"#FFFFFF",
+					selectorBackgroundNormalColor2:"#FFFFFF",
+					selectorBackgroundSelectedColor1:"#bab8b4",
+					selectorBackgroundSelectedColor2:"#a09e9a",
+					selectorTextNormalColor:"#8b8b8b",
+					selectorTextSelectedColor:"#FFFFFF",
+					buttonBackgroundNormalColor1:"#FFFFFF",
+					buttonBackgroundNormalColor2:"#FFFFFF",
+					buttonBackgroundSelectedColor1:"#bab8b4",
+					buttonBackgroundSelectedColor2:"#bab8b4",
+					buttonTextNormalColor:"#8b8b8b",
+					buttonTextSelectedColor:"#FFFFFF",
+					comboBoxShadowColor:"#999999",
+					comboBoxHorizontalMargins:12,
+					comboBoxVerticalMargins:12,
+					comboBoxCornerRadius:0,
+												
+					//lightbox settings
+					addLightBoxKeyboardSupport:"yes",
+					showLightBoxNextAndPrevButtons:"yes",
+					showLightBoxZoomButton:"yes",
+					showLightBoxInfoButton:"yes",
+					showLighBoxSlideShowButton:"yes",
+					showLightBoxInfoWindowByDefault:"no",
+					slideShowAutoPlay:"no",
+					lightBoxVideoAutoPlay:"no",
+					lightBoxBackgroundColor:"#000000",
+					lightBoxInfoWindowBackgroundColor:"#FFFFFF",
+					lightBoxItemBorderColor1:"#fcfdfd",
+					lightBoxItemBorderColor2:"#e4e4e4",
+					lightBoxItemBackgroundColor:"#333333",
+					lightBoxMainBackgroundOpacity:.8,
+					lightBoxInfoWindowBackgroundOpacity:.9,
+					lightBoxBorderSize:0,
+					lightBoxBorderRadius:0,
+					lightBoxSlideShowDelay:4000
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- header -->
+		<div id="mainHeader">
+			<img id="logoImage" src="graphics/logo.jpg"/>
+			<img id="byFWD" src="graphics/fwd.jpg"/>
+		</div>
+		
+		<!-- menu holder -->
+		<div id="menuHolder"></div>
+		
+		<!-- div used as a holder for the carousel -->
+		<div id="myDiv"></div>
+		
+		<!-- sliders holder -->
+		<div id="mainSlidersHolder">
+			<p id="preview">Live preview settings:</p>
+			<div id="slidersHolder"></div>
+		</div>
+		
+		<!-- thumbnails holder -->
+		<div id="mainThumbsHolder">
+			<p id="examples">Examples:</p>
+			<div id="thumbsHolder"></div>
+		</div>
+		
+		<!-- what is -->
+		<div id="mainInfoHolder">
+			<p class="headerText"><span class="blue">What is</span> Ultimate <span class="blue">3D</span> Carousel ?</p>
+			<p id="whatIsMainText">Ultimate 3D Carousel is a fully responsive media 3D carousel plugin that allows you to display media content with an unique original layout from a 3D perspective. It’s perfect for any kind of presentation, for anyone that wants to deliver a great impact on their visitors. It runs on all major browsers and mobile devices like iPhone, iPad, IOS, Android and Windows 8. Also supports 3 topologies and unlimited categories and each category can have any number of thumbnails. The datalists are loaded from a simple HTML markup.</p>
+			<p class="headerText"><span class="blue">Ultimate 3D Carousel</span> main features:</p>
+			
+			<div id="mainFeatureTableHolder">
+				<table>
+					<tr>
+						<td id="col1" class="firstTd">
+							<p><span class="blue">+ </span><span class="bold">Responsive / Fluid</span> layout with autoscale function.</p>
+							<p><span class="blue">+ </span>Mobile and desktop optimized (<a href="http://www.youtube.com/watch?v=v7POb8zrb6M" target="_blank">Ipad demo here!</a>).</p>
+							<p><span class="blue">+ </span>Scroll and swipe functions for the desktop and mobile devices.</p>
+							<p><span class="blue">+ </span><span class="bold">Mouse Wheel</span> support - navigation with mouse wheel scrolling.</p>
+							<p><span class="blue">+ </span><span class="bold">Keyboard</span> support - the left and right arrows can be used for navigation through the thumbnails.</p>
+							<p><span class="blue">+ </span>Optional <span class="bold">Categories Menu</span>.</p>
+							<p><span class="blue">+ </span>Support for <span class="bold">unlimited categories</span> and each category can have any number of thumbnails.</p>
+							<p><span class="blue">+ </span>The option to start at a specific category.</p>
+							<p><span class="blue">+ </span>Customizable thumbnails size and topology geometry.</p>
+							<p><span class="blue">+ </span>Customizable <span class="bold">description text</span> for the center thumbnail.</p>
+							<p><span class="blue">+ </span>Customizable controls - each button and scrollbar component can be changed.</p>
+							<p><span class="blue">+ </span>Customizable <span class="bold">reflection</span> for the thumbnails.</p>
+							<p><span class="blue">+ </span><span class="bold">Custom action</span> for the thumbnail click.</p>
+						</td>
+						<td class="secondTd"></td>
+						<td id="col2">
+							<p><span class="blue">+ </span>Optional and customizable <span class="bold">Shadow Box Gradient</span> for the thumbnails.</p>
+							<p><span class="blue">+ </span>Powerful <span class="bold">API</span> included.</p>
+							<p><span class="blue">+ </span>You can include multiple instances on the same page.</p>
+							<p><span class="blue">+ </span>Slideshow <span class="bold">Autoplay</span>.</p>
+							<p><span class="blue">+ </span>Responsive / Fluid layout for the carousel <span class="bold">Lightbox</span>.</p>
+							<p><span class="blue">+ </span>Image lightbox support.</p>
+							<p><span class="blue">+ </span><span class="bold">Iframe</span> lightbox support.</p>
+							<p><span class="blue">+ </span><span class="bold">Vimeo</span> and <span class="bold">YouTube</span> lightbox support.</p>
+							<p><span class="blue">+ </span>Zoom and panning support for lightbox images.</p>
+							<p><span class="blue">+ </span>Optional lightbox slideshow button, time and autoplay.</p>
+							<p><span class="blue">+ </span>Customizable <span class="bold">border</span> and <span class="bold">background</span> for the lightbox.</p>
+							<p><span class="blue">+ </span>Lightbox <span class="bold">keyboard</span> support - the left and right arrows can be used for navigation.</p>
+							<p><span class="blue">+ </span><span class="bold">Three skins</span> included along with the psd files.</p>
+							<p><span class="blue">+ </span>Detailed <span class="bold">documentation</span> and sample files.</p>
+						</td>
+					<tr>
+				</table>
+			</div>
+		</div>
+		
+		<div id="specialNotesMainHolder">
+			<div id="specialNotes">
+				<p class="specialNotesHeaderText">Special notes:</p>
+				<p><span class="blue">+ </span>When viewing the carousel on a mobile browser the scrollbar is automatically disabled, the swipe functionality taking its place.</p>
+				<p><span class="blue">+ </span>On IE the carouselXRotation does not work.</p>
+				<p><span class="blue">+ </span>The carousel also has a setting to limit the maximum number of thumbnails only on mobile devices, separately from the pc, for performance reasons. This is an optional feature it can be disabled but we advice to leave it active because it will increase the performance on mobile devices.</p>
+				<p><span class="blue">+ </span>The skin is constructed from png files.</p>
+				<p id="lastP"><span class="blue">+ </span>For support or customizations please contact us <a href="mailto:contact@webdesign-flash.ro">here</a>.</p>
+			</div>
+		</div>
+		
+		<!-- carousel data -->
+		<ul id="playList1" style="display: none;">
+			
+			<!-- category  -->
+			<ul data-cat="Category one">
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/1.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the carousel can open a browser window or the lightbox, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOM PRESS THUMBNAIL ACTION.</p>
+						<p class="mediaDescriptionText">When a thumbnail is pressed you can choose either to display an original media lightbox which we have coded, or to open a new webpage, the url and target of this webpage can be specified. The lightbox can display images, iframe or videos loaded from YouTube or Vimeo. Also you can set up one or more thumbnails so that a new browser page will be opened when they are pressed. The URL and target for this page can be customized, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="media" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">RESPONSIVE LAYOUT</p>
+						<p class="smallLabel">The carousel has responsive layout.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">RESPONSIVE LAYOUT.</p>
+						<p class="mediaDescriptionText">The carousel has responsive layout, basically it has an adaptable layout which makes it the perfect candidate for any type of project.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-path="load/thumbnails/3.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+						<p class="smallLabel">On a older browser that does not have 3D support the carousel will display in a 2D format.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+						<p class="mediaDescriptionText">On a older browser that does not have 3D support the carousel will display in a 2D format..</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/4.jpg"></li>
+						<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">GREAT PERFORMANCE ON MOBILE DEVICES</p>
+						<p class="smallLabel">This carousel is using the GPU (hardware acceleration).</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-path="load/thumbnails/5.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The carousel lightbox can load and play videos from youtube or vimeo easily.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="iframe" data-width="800" data-height="550" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-path="load/thumbnails/6.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">IFRAME SUPPORT!</p>
+						<p class="smallLabel">The lightbox can load a HTML page and display it with ease.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">IFRAME SUPPORT!</p>
+						<p class="mediaDescriptionText">The lightbox can load a HTML page and display it with ease. All you have to do is to include the link of the HTML page and the lightbox will display it. The HTML page size (width and height) can be easily set.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="load/images/7.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOMIZABLE SKIN AND COLOR THEME</p>
+						<p class="smallLabel">The entire color theme can be modified, and also the skin can be replaced with your own.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOMIZABLE SKIN AND COLOR THEME.</p>
+						<p class="mediaDescriptionText">The entire color theme can be modified, and also the skin can be replaced with your own.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/8.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="55" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOM TEXT CAN BE ADDED HERE AND FORMATTED WITH CSS.</p>
+						<p class="smallLabel">Full css support, the text which appear over the thumbnail can be formatted  with CSS.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="load/images/9.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/9.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">THUMBNAILS DESCRIPTION</p>
+						<p class="smallLabel">Each thumbnail can have a short description that is visible when the mouse is over a thumbnail.</p>
+					</li>
+					<li data-info>
+						<p class="mediaDescriptionHeader">THUMBNAILS DESCRIPTION.</p>
+						<p class="mediaDescriptionText">Each thumbnail can have a short description, the text and background can be formatted with CSS.</p>
+					</li>
+				</ul>
+			</ul>
+			<!-- end  -->
+			
+			<!-- category  -->
+			<ul data-cat="Category two">
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/1.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the carousel can open a browser window or the lightbox, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOM PRESS THUMBNAIL ACTION.</p>
+						<p class="mediaDescriptionText">When a thumbnail is pressed you can choose either to display an original media lightbox which we have coded, or to open a new webpage, the url and target of this webpage can be specified. The lightbox can display images, iframe or videos loaded from YouTube or Vimeo. Also you can set up one or more thumbnails so that a new browser page will be opened when they are pressed. The URL and target for this page can be customized, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="media" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">RESPONSIVE LAYOUT</p>
+						<p class="smallLabel">The carousel has responsive layout.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">RESPONSIVE LAYOUT.</p>
+						<p class="mediaDescriptionText">The carousel has responsive layout, basically it has an adaptable layout which makes it the perfect candidate for any type of project.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-path="load/thumbnails/3.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+						<p class="smallLabel">On a older browser that does not have 3D support the carousel will display in a 2D format.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+						<p class="mediaDescriptionText">On a older browser that does not have 3D support the carousel will display in a 2D format..</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/4.jpg"></li>
+						<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">GREAT PERFORMANCE ON MOBILE DEVICES</p>
+						<p class="smallLabel">This carousel is using the GPU (hardware acceleration).</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-path="load/thumbnails/5.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The carousel lightbox can load and play videos from youtube or vimeo easily.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="iframe" data-width="800" data-height="550" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-path="load/thumbnails/6.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">IFRAME SUPPORT!</p>
+						<p class="smallLabel">The lightbox can load a HTML page and display it with ease.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">IFRAME SUPPORT!</p>
+						<p class="mediaDescriptionText">The lightbox can load a HTML page and display it with ease. All you have to do is to include the link of the HTML page and the lightbox will display it. The HTML page size (width and height) can be easily set.</p>
+					</li>
+				</ul>
+				
+			</ul>
+			<!-- end  -->
+			
+			<!-- image datalist category  -->
+			<ul data-cat="Category three">
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/1.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the carousel can open a browser window or the lightbox, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOM PRESS THUMBNAIL ACTION.</p>
+						<p class="mediaDescriptionText">When a thumbnail is pressed you can choose either to display an original media lightbox which we have coded, or to open a new webpage, the url and target of this webpage can be specified. The lightbox can display images, iframe or videos loaded from YouTube or Vimeo. Also you can set up one or more thumbnails so that a new browser page will be opened when they are pressed. The URL and target for this page can be customized, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-path="load/thumbnails/5.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The carousel lightbox can load and play videos from youtube or vimeo easily.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="media" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">RESPONSIVE LAYOUT</p>
+						<p class="smallLabel">The carousel has responsive layout.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">RESPONSIVE LAYOUT.</p>
+						<p class="mediaDescriptionText">The carousel has responsive layout, basically it has an adaptable layout which makes it the perfect candidate for any type of project.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/12.jpg"></li>
+						<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">GREAT PERFORMANCE ON MOBILE DEVICES</p>
+						<p class="smallLabel">This carousel is using the GPU (hardware acceleration).</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">GREAT PERFORMANCE ON MOBILE DEVICES.</p>
+						<p class="mediaDescriptionText">This carousel is using the GPU (hardware acceleration), the rendering speed and performance are impeccable on desktop computers and most importantly on mobile devices.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="load/images/13.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/13.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">ZOOM AND PANNING SUPPORT FOR IMAGES</p>
+						<p class="smallLabel">You can zoom in and out an image and you can pan the image,  in this way you can see the image in great detail (optional).</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">ZOOM AND PANNING SUPPORT FOR IMAGES.</p>
+						<p class="mediaDescriptionText">You can zoom in and out an image and you can pan the image,  in this way you can see the image in great detail (optional).</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-path="load/thumbnails/3.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+						<p class="smallLabel">On a older browser that does not have 3D support the carousel will display in a 2D format.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+						<p class="mediaDescriptionText">On a older browser that does not have 3D support the carousel will display in a 2D format..</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/4.jpg"></li>
+						<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">GREAT PERFORMANCE ON MOBILE DEVICES</p>
+						<p class="smallLabel">This carousel is using the GPU (hardware acceleration).</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-path="load/thumbnails/5.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The carousel lightbox can load and play videos from youtube or vimeo easily.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="iframe" data-width="800" data-height="550" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-path="load/thumbnails/6.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">IFRAME SUPPORT!</p>
+						<p class="smallLabel">The lightbox can load a HTML page and display it with ease.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">IFRAME SUPPORT!</p>
+						<p class="mediaDescriptionText">The lightbox can load a HTML page and display it with ease. All you have to do is to include the link of the HTML page and the lightbox will display it. The HTML page size (width and height) can be easily set.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="load/images/7.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOMIZABLE SKIN AND COLOR THEME</p>
+						<p class="smallLabel">The entire color theme can be modified, and also the skin can be replaced with your own.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOMIZABLE SKIN AND COLOR THEME.</p>
+						<p class="mediaDescriptionText">The entire color theme can be modified, and also the skin can be replaced with your own.</p>
+					</li>
+				</ul>
+				
+			</ul>
+			<!-- end -->
+			
+		</ul>
+		
+		<!-- carousel data -->
+		<ul id="playList2SingleCat" style="display: none;">
+			
+			<!-- category  -->
+			<ul data-cat="Category one">
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/1.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the carousel can open a browser window or the lightbox, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOM PRESS THUMBNAIL ACTION.</p>
+						<p class="mediaDescriptionText">When a thumbnail is pressed you can choose either to display an original media lightbox which we have coded, or to open a new webpage, the url and target of this webpage can be specified. The lightbox can display images, iframe or videos loaded from YouTube or Vimeo. Also you can set up one or more thumbnails so that a new browser page will be opened when they are pressed. The URL and target for this page can be customized, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="media" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">RESPONSIVE LAYOUT</p>
+						<p class="smallLabel">The carousel has responsive layout.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">RESPONSIVE LAYOUT.</p>
+						<p class="mediaDescriptionText">The carousel has responsive layout, basically it has an adaptable layout which makes it the perfect candidate for any type of project.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-path="load/thumbnails/3.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+						<p class="smallLabel">On a older browser that does not have 3D support the carousel will display in a 2D format.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+						<p class="mediaDescriptionText">On a older browser that does not have 3D support the carousel will display in a 2D format..</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/4.jpg"></li>
+						<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">GREAT PERFORMANCE ON MOBILE DEVICES</p>
+						<p class="smallLabel">This carousel is using the GPU (hardware acceleration).</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-path="load/thumbnails/5.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The carousel lightbox can load and play videos from youtube or vimeo easily.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="iframe" data-width="800" data-height="550" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-path="load/thumbnails/6.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">IFRAME SUPPORT!</p>
+						<p class="smallLabel">The lightbox can load a HTML page and display it with ease.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">IFRAME SUPPORT!</p>
+						<p class="mediaDescriptionText">The lightbox can load a HTML page and display it with ease. All you have to do is to include the link of the HTML page and the lightbox will display it. The HTML page size (width and height) can be easily set.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="load/images/7.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOMIZABLE SKIN AND COLOR THEME</p>
+						<p class="smallLabel">The entire color theme can be modified, and also the skin can be replaced with your own.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOMIZABLE SKIN AND COLOR THEME.</p>
+						<p class="mediaDescriptionText">The entire color theme can be modified, and also the skin can be replaced with your own.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/8.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="55" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOM TEXT CAN BE ADDED HERE AND FORMATTED WITH CSS.</p>
+						<p class="smallLabel">Full css support, the text which appear over the thumbnail can be formatted  with CSS.</p>
+					</li>
+				</ul>
+				
+			</ul>
+			<!-- end  -->
+			
+		</ul>
+		
+		<!-- carousel data -->
+		<ul id="playList3" style="display: none;">
+			
+			<!-- category  -->
+			<ul data-cat="Category one">
+				<ul>
+					<li data-type="none" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb1Div">
+							<p class="thumb1P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="none" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb2Div">
+							<p class="thumb2P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-width="640" data-height="420" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb3Div">
+							<p class="thumb3P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb4Div">
+							<p class="thumb4P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar dolor sit amet dolor sit. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="load/images/7.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb7Div">
+							<p class="thumb7P">
+								The carousel can handle HTML content as it is demonstrated in this example, the HTML content can be formatted with CSS allowing you to control the layout of your carousel in the way that pleases you most.
+							</p>
+							<p class="thumb7P2">
+								<a href='http://www.google.com' target="_blank" class='thumb7ImageIcon'></a>
+								<a href='http://www.google.com' target="_blank" class='thumb7HtmlIcon'></a>
+								<a href='http://www.google.com' target="_blank" class='thumb7LinkIcon'></a>
+								<a href='http://www.youtube.com' target="_blank" class='thumb7YoutubeIcon'></a>
+								<a href='http://www.vimeo.com' target="_blank" class='thumb7VimeoIcon'></a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="none" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb5Div">
+							<p class="thumb5P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="none" data-width="800" data-height="550" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb6Div">
+							<p class="thumb6P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="load/images/8.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb8Div">
+							<p class="thumb8P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes  est consectetur adipiscing elit. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="load/images/9.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb9Div">
+							<p class="thumb9P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+			</ul>
+			<!-- end  -->
+			
+		</ul>
+		
+		
+		<!-- carousel data -->
+		<ul id="playList4SingleCat" style="display: none;">
+			
+			<!-- category  -->
+			<ul data-cat="Category one">
+				<ul>
+					<li data-type="none" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb1Div">
+							<p class="thumb1P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="none" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb2Div">
+							<p class="thumb2P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-width="640" data-height="420" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb3Div">
+							<p class="thumb3P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="load/images/7.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb7Div">
+							<p class="thumb7P">
+								The carousel can handle HTML content as it is demonstrated in this example, the HTML content can be formatted with CSS allowing you to control the layout of your carousel in the way that pleases you most.
+							</p>
+							<p class="thumb7P2">
+								<a href='http://www.google.com' target="_blank" class='thumb7ImageIcon'></a>
+								<a href='http://www.google.com' target="_blank" class='thumb7HtmlIcon'></a>
+								<a href='http://www.google.com' target="_blank" class='thumb7LinkIcon'></a>
+								<a href='http://www.youtube.com' target="_blank" class='thumb7YoutubeIcon'></a>
+								<a href='http://www.vimeo.com' target="_blank" class='thumb7VimeoIcon'></a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb4Div">
+							<p class="thumb4P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar dolor sit amet dolor sit. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="none" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb5Div">
+							<p class="thumb5P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="none" data-width="800" data-height="550" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb6Div">
+							<p class="thumb6P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="load/images/8.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb8Div">
+							<p class="thumb8P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes  est consectetur adipiscing elit. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+			</ul>
+			<!-- end  -->
+			
+			<!-- category  -->
+			<ul data-cat="Category two">
+				<ul>
+					<li data-type="none" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb1Div">
+							<p class="thumb1P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="none" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb2Div">
+							<p class="thumb2P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-width="640" data-height="420" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb3Div">
+							<p class="thumb3P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb4Div">
+							<p class="thumb4P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar dolor sit amet dolor sit. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+			</ul>
+			<!-- end  -->
+			
+			<!-- category  -->
+			<ul data-cat="Category three">
+				<ul>
+					<li data-type="none" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb1Div">
+							<p class="thumb1P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="none" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb2Div">
+							<p class="thumb2P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-width="640" data-height="420" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb3Div">
+							<p class="thumb3P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb4Div">
+							<p class="thumb4P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar dolor sit amet dolor sit. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="none" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb5Div">
+							<p class="thumb5P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="none" data-width="800" data-height="550" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb6Div">
+							<p class="thumb6P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+			</ul>
+			<!-- end  -->
+			
+		</ul>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ultimate 3D Carousel</title>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<!-- Imports required for the css and js files -->
+		<link rel="stylesheet" type="text/css" href="load/minimal_classic_skin.css"/>
+		<link rel="stylesheet" type="text/css" href="load/html_content.css"/>
+		<script type="text/javascript" src="java/FWDUltimate3DCarousel.js"></script>
+		
+		<!-- Setup the carousel (all settings are explained in detail in the documentation files) -->
+		<script type="text/javascript">
+			FWDU3DCarUtils.onReady(function(){
+				var carousel = new FWDUltimate3DCarousel({
+					//required settings
+					carouselHolderDivId:"myDiv",
+					carouselDataListDivId:"carouselData",
+					displayType:"responsive",
+					autoScale:"yes",
+					carouselWidth:940,
+					carouselHeight:538,
+					skinPath:"load/minimal_classic_skin",
+												
+					//main settings
+					backgroundColor:"#000000",
+					backgroundImagePath:"",
+					thumbnailsBackgroundImagePath:"",
+					scrollbarBackgroundImagePath:"load/minimal_classic_skin/scrollbarBackground.jpg",
+					backgroundRepeat:"repeat-x",
+					carouselStartPosition:"center",
+					carouselTopology:"star",
+					carouselXRadius:540,
+					carouselYRadius:0,
+					carouselXRotation:10,
+					carouselYOffset:0,
+					showCenterImage:"no",
+					centerImagePath:"load/logo.png",
+					centerImageYOffset:0,
+					showDisplay2DAlways:"no",
+					slideshowDelay:5000,
+					autoplay:"no",
+					showPrevButton:"yes",
+					showNextButton:"yes",
+					showSlideshowButton:"yes",
+					disableNextAndPrevButtonsOnMobile:"no",
+					controlsMaxWidth:940,
+					slideshowTimerColor:"#777777",
+					showContextMenu:"no",
+					addKeyboardSupport:"yes",
+												
+					//thumbnail settings
+					thumbnailWidth:380,
+					thumbnailHeight:330,
+					thumbnailBorderSize:0,
+					thumbnailMinimumAlpha:.3,
+					thumbnailBackgroundColor:"#FFFFFF",
+					thumbnailBorderColor1:"#FFFFFF",
+					thumbnailBorderColor2:"#FFFFFF",
+					transparentImages:"no",
+					maxNumberOfThumbnailsOnMobile:13,
+					showThumbnailsGradient:"yes",
+					showThumbnailsHtmlContent:"yes",
+					textBackgroundColor:"#FFFFFF",
+					textBackgroundOpacity:.7,
+					showText:"no",
+					showTextBackgroundImage:"no",
+					showThumbnailBoxShadow:"yes",
+					thumbnailBoxShadowCss:"0px 2px 2px #111111",
+					showReflection:"yes",
+					reflectionHeight:60,
+					reflectionDistance:0,
+					reflectionOpacity:.2,
+												
+					//scrollbar settings
+					showScrollbar:"yes",
+					disableScrollbarOnMobile:"yes",
+					enableMouseWheelScroll:"yes",
+					scrollbarHandlerWidth:300,
+					scrollbarTextColorNormal:"#000000",
+					scrollbarTextColorSelected:"#FFFFFF",
+												
+					//combobox settings
+					showComboBox:"yes",
+					startAtCategory:1,
+					selectLabel:"SELECT CATEGORIES",
+					allCategoriesLabel:"All Categories",
+					showAllCategories:"no",
+					comboBoxPosition:"topright",
+					selectorBackgroundNormalColor1:"#FFFFFF",
+					selectorBackgroundNormalColor2:"#FFFFFF",
+					selectorBackgroundSelectedColor1:"#000000",
+					selectorBackgroundSelectedColor2:"#000000",
+					selectorTextNormalColor:"#000000",
+					selectorTextSelectedColor:"#FFFFFF",
+					buttonBackgroundNormalColor1:"#FFFFFF",
+					buttonBackgroundNormalColor2:"#FFFFFF",
+					buttonBackgroundSelectedColor1:"#000000",
+					buttonBackgroundSelectedColor2:"#000000",
+					buttonTextNormalColor:"#000000",
+					buttonTextSelectedColor:"#FFFFFF",
+					comboBoxShadowColor:"#222222",
+					comboBoxHorizontalMargins:12,
+					comboBoxVerticalMargins:12,
+					comboBoxCornerRadius:0,
+												
+					//lightbox settings
+					addLightBoxKeyboardSupport:"yes",
+					showLightBoxNextAndPrevButtons:"yes",
+					showLightBoxZoomButton:"yes",
+					showLightBoxInfoButton:"yes",
+					showLighBoxSlideShowButton:"yes",
+					showLightBoxInfoWindowByDefault:"no",
+					slideShowAutoPlay:"no",
+					lightBoxVideoAutoPlay:"no",
+					lightBoxVideoWidth:640,
+					lightBoxVideoHeight:480,
+					lightBoxIframeWidth:800,
+					lightBoxIframeHeight:600,
+					lightBoxBackgroundColor:"#000000",
+					lightBoxInfoWindowBackgroundColor:"#FFFFFF",
+					lightBoxItemBorderColor1:"#FFFFFF",
+					lightBoxItemBorderColor2:"#FFFFFF",
+					lightBoxItemBackgroundColor:"#333333",
+					lightBoxMainBackgroundOpacity:.8,
+					lightBoxInfoWindowBackgroundOpacity:.9,
+					lightBoxBorderSize:0,
+					lightBoxBorderRadius:0,
+					lightBoxSlideShowDelay:4000
+				});	
+			});
+		</script>
+	</head>
+
+	<body>
+		<!-- div used as a holder for the carousel -->
+		<div id="myDiv"></div>
+
+		<!-- carousel data -->
+		<div id="carouselData" style="display: none;">
+			
+			<!-- category  -->
+			<ul data-cat="Category one">
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lighbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb1Div">
+							<p class="thumb1P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="media" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lighbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb2Div">
+							<p class="thumb2P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque est. <a href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lighbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb3Div">
+							<p class="thumb3P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum est. <a href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lightbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb4Div">
+							<p class="thumb4P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar dolor sit amet dolor sit. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="media" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lighbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb5Div">
+							<p class="thumb5P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="iframe" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="5">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the grid can open a browser window or the lighbox.</p>
+					</li>
+					<li data-html-content="">
+						<div class="thumb6Div">
+							<p class="thumb6P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</ul>
+			<!-- end  -->
+			
+			<!-- category  -->
+			<ul data-cat="Category two">
+				<ul>
+					<li data-type="none"></li>
+					<li data-html-content="">
+						<div class="thumb1Div">
+							<p class="thumb1P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum, justo sed vestibulum tincidunt est. <a href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="none"></li>
+					<li data-html-content="">
+						<div class="thumb2Div">
+							<p class="thumb2P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque est. <a href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none"></li>
+					<li data-html-content="">
+						<div class="thumb3Div">
+							<p class="thumb3P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar arcu, quis lacinia massa. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum est. <a href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="none"></li>
+					<li data-html-content="">
+						<div class="thumb4Div">
+							<p class="thumb4P">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at pulvinar dolor sit amet dolor sit. <a class="thumblink" href="http://www.google.com" target="_blank">Read more.</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</ul>
+			<!-- end  -->
+		</div>
+		
+	</body>
+</html>
+
+
+
+

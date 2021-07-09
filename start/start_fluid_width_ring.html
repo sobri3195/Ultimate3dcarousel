@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ultimate 3D Carousel</title>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<!-- Imports required for the css and js files -->
+		<link rel="stylesheet" type="text/css" href="load/skin_modern_warm.css"/>
+		<link rel="stylesheet" type="text/css" href="load/html_content.css"/>
+		<script type="text/javascript" src="java/FWDUltimate3DCarousel.js"></script>
+		
+		<!-- Setup the carousel (all settings are explained in detail in the documentation files) -->
+		<script type="text/javascript">
+			FWDU3DCarUtils.onReady(function(){
+				var carousel = new FWDUltimate3DCarousel({
+					//required settings
+					carouselHolderDivId:"myDiv",
+					carouselDataListDivId:"carouselData",
+					displayType:"fluidwidth",
+					autoScale:"yes",
+					carouselWidth:940,
+					carouselHeight:538,
+					skinPath:"load/skin_modern_warm",
+									
+					//main settings
+					backgroundColor:"#DDDDDD",
+					backgroundImagePath:"load/skin_modern_warm/background.jpg",
+					thumbnailsBackgroundImagePath:"",
+					scrollbarBackgroundImagePath:"load/skin_modern_warm/scrollbarBackground.jpg",
+					backgroundRepeat:"repeat-x",
+					carouselStartPosition:"center",
+					carouselTopology:"ring",
+					carouselXRadius:600,
+					carouselYRadius:0,
+					carouselXRotation:10,
+					carouselYOffset:0,
+					showCenterImage:"no",
+					centerImagePath:"load/logo.png",
+					centerImageYOffset:0,
+					showDisplay2DAlways:"no",
+					slideshowDelay:5000,
+					autoplay:"no",
+					showPrevButton:"yes",
+					showNextButton:"yes",
+					showSlideshowButton:"yes",
+					disableNextAndPrevButtonsOnMobile:"no",
+					controlsMaxWidth:940,
+					slideshowTimerColor:"#777777",
+					showContextMenu:"no",
+					addKeyboardSupport:"yes",
+												
+					//thumbnail settings
+					thumbnailWidth:400,
+					thumbnailHeight:266,
+					thumbnailBorderSize:0,
+					thumbnailMinimumAlpha:.3,
+					thumbnailBackgroundColor:"#999999",
+					thumbnailBorderColor1:"#fcfdfd",
+					thumbnailBorderColor2:"#e4e4e4",
+					transparentImages:"no",
+					maxNumberOfThumbnailsOnMobile:13,
+					showThumbnailsGradient:"yes",
+					showThumbnailsHtmlContent:"no",
+					textBackgroundColor:"#333333",
+					textBackgroundOpacity:.7,
+					showText:"yes",
+					showTextBackgroundImage:"yes",
+					showThumbnailBoxShadow:"yes",
+					thumbnailBoxShadowCss:"0px 2px 2px #666666",
+					showReflection:"yes",
+					reflectionHeight:60,
+					reflectionDistance:0,
+					reflectionOpacity:.2,
+												
+					//scrollbar settings
+					showScrollbar:"yes",
+					disableScrollbarOnMobile:"yes",
+					enableMouseWheelScroll:"yes",
+					scrollbarHandlerWidth:300,
+					scrollbarTextColorNormal:"#777777",
+					scrollbarTextColorSelected:"#000000",
+												
+					//combobox settings
+					showComboBox:"yes",
+					startAtCategory:1,
+					selectLabel:"SELECT CATEGORIES",
+					allCategoriesLabel:"All Categories",
+					showAllCategories:"no",
+					comboBoxPosition:"topright",
+					selectorBackgroundNormalColor1:"#FFFFFF",
+					selectorBackgroundNormalColor2:"#FFFFFF",
+					selectorBackgroundSelectedColor1:"#bab8b4",
+					selectorBackgroundSelectedColor2:"#a09e9a",
+					selectorTextNormalColor:"#8b8b8b",
+					selectorTextSelectedColor:"#FFFFFF",
+					buttonBackgroundNormalColor1:"#FFFFFF",
+					buttonBackgroundNormalColor2:"#FFFFFF",
+					buttonBackgroundSelectedColor1:"#bab8b4",
+					buttonBackgroundSelectedColor2:"#bab8b4",
+					buttonTextNormalColor:"#8b8b8b",
+					buttonTextSelectedColor:"#FFFFFF",
+					comboBoxShadowColor:"#999999",
+					comboBoxHorizontalMargins:12,
+					comboBoxVerticalMargins:12,
+					comboBoxCornerRadius:0,
+												
+					//lightbox settings
+					addLightBoxKeyboardSupport:"yes",
+					showLightBoxNextAndPrevButtons:"yes",
+					showLightBoxZoomButton:"yes",
+					showLightBoxInfoButton:"yes",
+					showLighBoxSlideShowButton:"yes",
+					showLightBoxInfoWindowByDefault:"no",
+					slideShowAutoPlay:"no",
+					lightBoxVideoAutoPlay:"no",
+					lightBoxVideoWidth:640,
+					lightBoxVideoHeight:480,
+					lightBoxIframeWidth:800,
+					lightBoxIframeHeight:600,
+					lightBoxBackgroundColor:"#000000",
+					lightBoxInfoWindowBackgroundColor:"#FFFFFF",
+					lightBoxItemBorderColor1:"#fcfdfd",
+					lightBoxItemBorderColor2:"#e4FFe4",
+					lightBoxItemBackgroundColor:"#333333",
+					lightBoxMainBackgroundOpacity:.8,
+					lightBoxInfoWindowBackgroundOpacity:.9,
+					lightBoxBorderSize:0,
+					lightBoxBorderRadius:0,
+					lightBoxSlideShowDelay:4000
+				});	
+			});
+		</script>
+	</head>
+
+	<body>
+		<!-- div used as a holder for the carousel -->
+		<div id="myDiv"></div>
+
+		<!-- carousel data -->
+		<div id="carouselData" style="display: none;">
+			
+			<!-- image datalist category 1 -->
+			<ul data-cat="Category one">
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/1.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35"
+					data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the carousel can open a browser window
+						or the lightbox, also if HTML content is used the lightbox can be disabled this way links
+						or interactive html tags can be used.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOM PRESS THUMBNAIL ACTION.</p>
+						<p class="mediaDescriptionText">When a thumbnail is pressed you can choose
+						either to display an original media lightbox which we have coded, or to open a new webpage,
+						the url and target of this webpage can be specified. The lightbox can display images,
+						iframe or videos loaded from YouTube or Vimeo. Also you can set up one or more
+						thumbnails so that a new browser page will be opened when they are pressed. The URL and
+						target for this page can be customized, also if HTML content is used the lightbox can be
+						disabled this way links or interactive html tags can be used.</p>
+					</li>
+				</ul>
+			
+				<ul>
+					<li data-type="media" data-url="load/images/2.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35"
+					data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">RESPONSIVE LAYOUT</p>
+						<p class="smallLabel">The carousel has responsive layout.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">RESPONSIVE LAYOUT.</p>
+						<p class="mediaDescriptionText">The carousel has responsive layout, basically
+						it has an adaptable layout which makes it the perfect candidate for any type of project.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-path="load/thumbnails/3.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35"
+					data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+						<p class="smallLabel">On a older browser that does not have 3D support the carousel will
+						display in a 2D format.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+						<p class="mediaDescriptionText">On a older browser that does not have 3D support
+						the carousel will display in a 2D format.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-path="load/thumbnails/4.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35"
+					data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The carousel lightbox can load and play videos from youtube or vimeo easely.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video
+						that you want to display and the lightbox will display and play your video. The size (width and height)
+						of each video can be set easily.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-path="load/thumbnails/5.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The carousel lightbox can load and play videos from youtube or vimeo easily.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+
+				<ul>
+					<li data-type="iframe" data-url="http://www.bing.com/"></li>
+					<li data-thumbnail-path="load/thumbnails/6.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35"
+					data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">IFRAME SUPPORT!</p>
+						<p class="smallLabel">The lightbox can load a HTML page and display it with ease.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">IFRAME SUPPORT!</p>
+						<p class="mediaDescriptionText">The lightbox can load a HTML page and display it with ease.
+						All you have to do is to include the link of the HTML page and the lightbox will display it.
+						The HTML page size (width and height) can be easily set.</p>
+					</li>
+				</ul>	
+				
+			</ul>
+			<!-- end  -->
+			
+			<!-- image datalist category 2 -->
+			<ul data-cat="Category two">
+				<ul>
+					<li data-type="media" data-url="load/images/1.jpg"></li>
+					<li data-thumbnail-path="load/thumbnails/1.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">RESPONSIVE LAYOUT</p>
+						<p class="smallLabel">The carousel has responsive layout.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">RESPONSIVE LAYOUT.</p>
+						<p class="mediaDescriptionText">The carousel has responsive layout, basically it has an adaptable layout which makes it the perfect candidate for any type of project.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/2.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
+						<p class="smallLabel">When a thumbnail is pressed the carousel can open a browser window or the lightbox, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">CUSTOM PRESS THUMBNAIL ACTION.</p>
+						<p class="mediaDescriptionText">When a thumbnail is pressed you can choose either to display an original media lightbox which we have coded, or to open a new webpage, the url and target of this webpage can be specified. The lightbox can display images, iframe or videos loaded from YouTube or Vimeo. Also you can set up one or more thumbnails so that a new browser page will be opened when they are pressed. The URL and target for this page can be customized, also if HTML content is used the lightbox can be disabled this way links or interactive html tags can be used.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="http://vimeo.com/84577359"></li>
+					<li data-thumbnail-path="load/thumbnails/3.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
+						<p class="smallLabel">On a older browser that does not have 3D support the carousel will display in a 2D format.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
+						<p class="mediaDescriptionText">On a older browser that does not have 3D support the carousel will display in a 2D format.</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li data-type="media" data-url="http://www.youtube.com/watch?v=v7POb8zrb6M"></li>
+					<li data-thumbnail-path="load/thumbnails/4.jpg"></li>
+					<li data-thumbnail-text="" data-thumbnail-text-title-offset="35"
+					data-thumbnail-text-offset-top="10" data-thumbnail-text-offset-bottom="7">
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The carousel lightbox can load and play videos from youtube or vimeo easely.</p>
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video
+						that you want to display and the lightbox will display and play your video. The size (width and height)
+						of each video can be set easily.</p>
+					</li>
+				</ul>
+			</ul>
+			<!-- end  -->
+			
+		</div>
+		
+	</body>
+</html>
+
+
+
+
